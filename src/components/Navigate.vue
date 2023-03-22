@@ -1,4 +1,15 @@
 <script>
+import { ref } from 'vue';
+export default {
+    setup(){
+        let isOpen = ref(false)
+        function handleMenu() {
+            isOpen.value = !isOpen.value
+            console.log(isOpen.value);
+        }
+        return {isOpen, handleMenu}
+    }
+}
 </script>
 
 <template>
@@ -21,7 +32,7 @@
                     <a href="#contact">Me contacter</a>
                 </li>
             </ul>
-            <button class="burger-box">
+            <button @click="handleMenu()" class="burger-box">
                 <span class="burger"></span>
             </button>
         </nav>
