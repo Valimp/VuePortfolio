@@ -2,17 +2,21 @@
 </script>
 
 <template>
-    <section class="section">
-
+    <section id="{{ id }}" class="section">
+        <slot></slot>
     </section>
 </template>
 
 <style scoped>
     .section {
-        height: 30rem;
-        background-color: #333;
-        clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-        margin: 15rem 0;
+        height: auto;
+        background-color: #CCC9DC;
+        color: #333232;
+        clip-path: polygon(0 50px, 100% 0, 100% calc(100% - 50px), 0 100%);
+        margin: 25rem 0;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 10rem 15rem;
     }
 </style>
