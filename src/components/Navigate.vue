@@ -17,7 +17,7 @@ export default {
         <h1 class="title">
             PhotoCM
         </h1>
-        <nav class="menu">
+        <nav class="menu" :class="{ showMenu: isOpen }">
             <ul class="links">
                 <li class="link">
                     <a href="#about">Qui suis-je ?</a>
@@ -118,6 +118,7 @@ export default {
             background-color: white;
             border-radius: 1px;
             position: relative;
+            transition: all .5s ease-in-out;
         }
         .burger::before,
         .burger::after {
@@ -132,6 +133,18 @@ export default {
         .burger::after {
             transform: translateY(6px);
             width: 15px;
+        }
+        .showMenu .burger {
+            width: 0;
+            background: transparent;
+        }
+        .showMenu .burger::before {
+            width: 20px;
+            transform: rotate(45deg);
+        }
+        .showMenu .burger::after {
+            width: 20px;
+            transform: rotate(-45deg);
         }
     }
 </style>
