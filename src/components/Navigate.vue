@@ -21,7 +21,9 @@
                     <a href="#contact">Me contacter</a>
                 </li>
             </ul>
-            <span class="burger"></span>
+            <button class="burger-box">
+                <span class="burger"></span>
+            </button>
         </nav>
     </header>
 </template>
@@ -75,31 +77,50 @@
     .link a:hover::after {
         transform: scaleX(1);
     }
-    .burger,
-    .burger::before,
-    .burger::after {
+    .burger-box {
         width: 20px;
-        height: 2px;
-        background-color: white;
-        border-radius: 1px;
-        position: relative;
-    }
-    .burger::after,
-    .burger::before {
-        content: '';
-        position: absolute;
-        left: 0;
-    }
-    .burger::before {
-        transform: translateY(-6px);
-    }
-    .burger::after {
-        transform: translateY(6px);
+        height: 20px;
+        background-color: transparent;
+        color: inherit;
+        display: none;
     }
 
     @media screen and (max-width: 920px) {
         .links {
             display: none;
+        }
+        .burger-box {
+            display: block;
+            z-index: 10;
+            border: none;
+        }
+        .burger-box:hover {
+            cursor: pointer;
+        }
+        .burger,
+        .burger::before,
+        .burger::after {
+            align-self: center;
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            border-radius: 1px;
+            position: relative;
+        }
+        .burger::before,
+        .burger::after {
+            content: '';
+            position: absolute;
+            left: 0;
+        }
+        .burger::before {
+            transform: translateY(-6px);
+            width: 15px;
+        }
+        .burger::after {
+            transform: translateY(6px);
+            width: 15px;
         }
     }
 </style>
