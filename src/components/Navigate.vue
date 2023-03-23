@@ -94,6 +94,8 @@ export default {
         background-color: transparent;
         color: inherit;
         display: none;
+        position: sticky;
+
     }
 
     @media screen and (max-width: 920px) {
@@ -113,12 +115,12 @@ export default {
             display: block;
             z-index: 10;
             border: none;
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
         }
         .burger-box:hover {
             cursor: pointer;
-            position: fixed;
-            right: 1.5rem;
-            top: 1.5rem;
         }
         .burger,
         .burger::before,
