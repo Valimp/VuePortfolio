@@ -78,7 +78,7 @@ export default {
         background-color: orange;
         transform-origin: 0 0;
         position: absolute;
-        bottom: -2px;
+        bottom: 1px;
         left: 0;
         right: 0;
         transform: scaleX(0);
