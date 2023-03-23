@@ -20,16 +20,16 @@ export default {
         <nav class="menu" :class="{ showMenu: isOpen }">
             <ul class="links">
                 <li class="link">
-                    <a href="#about">Qui suis-je ?</a>
+                    <a href="#about">Accueil</a>
                 </li>
                 <li class="link">
                     <a href="#portfolio">Portfolio</a>
                 </li>
                 <li class="link">
-                    <a href="#offer">Mes offres</a>
+                    <a href="#offer">Tarifs</a>
                 </li>
                 <li class="link">
-                    <a href="#contact">Me contacter</a>
+                    <a href="#contact">Contact</a>
                 </li>
             </ul>
             <button @click="handleMenu()" class="burger-box">
@@ -97,8 +97,17 @@ export default {
     }
 
     @media screen and (max-width: 920px) {
+        .header {
+            flex-direction: column;
+            height: 4rem;
+        }
         .links {
-            display: none;
+            background-color: #333232;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            transform: translateX(-100vw);
+            transition: all .2s ease-in-out;
         }
         .burger-box {
             display: block;
@@ -107,6 +116,9 @@ export default {
         }
         .burger-box:hover {
             cursor: pointer;
+            position: fixed;
+            right: 1.5rem;
+            top: 1.5rem;
         }
         .burger,
         .burger::before,
@@ -145,6 +157,9 @@ export default {
         .showMenu .burger::after {
             width: 20px;
             transform: rotate(-45deg);
+        }
+        .showMenu .links {
+            transform: translateX(0);
         }
     }
 </style>
